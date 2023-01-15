@@ -5,12 +5,13 @@ pipeline {
       steps{
         docker.build("Dockerfile")
       } //steps
-    } //stage
-    stage("Run docker") {
-      steps {
+     } //stage
+     stage("Run docker") {
+       steps {
         docker.inside(){
            sh "whoami"
          } //docker
-     } //steps
-   }//stage
+       } //steps
+     }//stage
+   } //stages
 }//pipeline
