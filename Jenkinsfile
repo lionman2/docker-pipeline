@@ -13,7 +13,7 @@ pipeline {
        steps {
          script {
            my_image.inside(){
-            sh "whoami"
+            sh "echo 'lala'"
           } //docker
          } //script
        } //steps
