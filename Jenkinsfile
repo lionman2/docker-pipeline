@@ -8,9 +8,11 @@ pipeline {
      } //stage
      stage("Run docker") {
        steps {
-        docker.inside(){
-           sh "whoami"
-         } //docker
+         script {
+           docker.inside(){
+            sh "whoami"
+          } //docker
+         } //script
        } //steps
      }//stage
    } //stages
