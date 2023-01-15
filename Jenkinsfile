@@ -1,17 +1,18 @@
+my_image = ""
 pipeline {
   agent any
   stages {
      stage("Build Docker"){
       steps{
         script {
-          docker.build("myimage:${BUILD_ID}")
+          my_image = docker.build("myimage:${BUILD_ID}")
         }
       } //steps
      } //stage
      stage("Run docker") {
        steps {
          script {
-           docker.inside(){
+           my_image.inside(){
             sh "whoami"
           } //docker
          } //script
