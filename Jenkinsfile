@@ -4,7 +4,7 @@ pipeline {
      stage("Build Docker"){
       steps{
         script {
-          docker.build("myImage:${BUILD_ID}")
+          docker.build("myimage:${BUILD_ID}")
         }
       } //steps
      } //stage
