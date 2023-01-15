@@ -3,7 +3,9 @@ pipeline {
   stages {
      stage("Build Docker"){
       steps{
+        script {
         docker.build("Dockerfile")
+        }
       } //steps
      } //stage
      stage("Run docker") {
